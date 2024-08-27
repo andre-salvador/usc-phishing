@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@prisma/nuxt':
-        specifier: ^0.0.35
-        version: 0.0.35(magicast@0.3.4)(rollup@4.21.1)(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
       nuxt:
         specifier: ^3.13.0
         version: 3.13.0(@parcel/watcher@2.4.1)(@types/node@22.5.0)(ioredis@5.4.1)(magicast@0.3.4)(rollup@4.21.1)(terser@5.31.6)(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
@@ -806,9 +803,6 @@ packages:
     peerDependenciesMeta:
       prisma:
         optional: true
-
-  '@prisma/nuxt@0.0.35':
-    resolution: {integrity: sha512-p8AeISCMGDnMDRj7EOcvM/T61Qy7+RauzMR3zU7V5Jte2dexSg6OBxcsxJyss+qHJFi/Ego0NGuvitCkBXDwaw==}
 
   '@rollup/plugin-alias@5.1.0':
     resolution: {integrity: sha512-lpA3RZ9PdIG7qqhEfv79tBffNaoDuukFDrmhLqg9ifv99u/ehn+lOg30x2zmhf8AQqQUZaMk/B9fZraQ6/acDQ==}
@@ -3968,22 +3962,6 @@ snapshots:
   '@polka/url@1.0.0-next.25': {}
 
   '@prisma/client@5.18.0': {}
-
-  '@prisma/nuxt@0.0.35(magicast@0.3.4)(rollup@4.21.1)(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))':
-    dependencies:
-      '@nuxt/devtools-kit': 1.4.1(magicast@0.3.4)(rollup@4.21.1)(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
-      '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.21.1)
-      '@prisma/client': 5.18.0
-      chalk: 5.3.0
-      defu: 6.1.4
-      execa: 8.0.1
-      prompts: 2.4.2
-    transitivePeerDependencies:
-      - magicast
-      - prisma
-      - rollup
-      - supports-color
-      - vite
 
   '@rollup/plugin-alias@5.1.0(rollup@4.21.1)':
     dependencies:

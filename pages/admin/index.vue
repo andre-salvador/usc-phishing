@@ -1,10 +1,13 @@
 <script setup lang="ts">
 
-// Instanciando o cliente Prisma
-const prisma = usePrismaClient()
-
+const config = useRuntimeConfig();
 // Buscando a lista de usuários através do Prisma
-const { data: users } = useAsyncData(async () => await prisma.user.findMany())
+const { data: users } = useAsyncData(async () => await $fetch(`${config.public.API_BASE_URL}/api/users`, {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json; x-api-version=1.0'
+  }
+}))
 </script>
 
 <template>
