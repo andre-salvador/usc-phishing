@@ -2,7 +2,7 @@
 
 const config = useRuntimeConfig();
 // Buscando a lista de usuários através do Prisma
-const { data: users } = useAsyncData(async () => await $fetch(`${config.public.API_BASE_URL}/api/user`, {
+const { data: users } = useAsyncData(async () => await $fetch(`${config.public.API_BASE_URL}/api/users`, {
   method: 'GET',
   headers: {
     'Content-Type': 'application/json; x-api-version=1.0'
